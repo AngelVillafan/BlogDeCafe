@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject BlogDeCafe.Services.CategoriasService CatService
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!--Custom CSS-->
     <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="icon" href="~/img/favicon.png">
     <!--Fuentes-->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;900&family=Space+Mono&display=swap" rel="stylesheet">
@@ -23,37 +26,24 @@
 
         <!--Navegacion-->
         <nav class="nav-main">
-            <img src="~/img/logo.png" alt="Ampersand Logo" class="nav-brand">
+            <a href="~/Home">
+                <img src="~/img/Logo sin fondo grande.png" alt="Ampersand Logo" class="nav-brand">
+
+            </a>
             <ul class="nav-menu show">
-                <li>
-                    <a href="#">Stores</a>
-                </li>
+                @foreach (var item in CatService.GetAll().ToList())
+                {
+                    <li>
+                        <a href="~/Home/@(item.Nombre)">@(item.Nombre)</a>
+                    </li>
+                }
 
-                <li>
-                    <a href="#">Blog</a>
-                </li>
-
-                <li>
-                    <a href="#">Trends</a>
-                </li>
-
-                <li>
-                    <a href="#">Outfits</a>
-                </li>
-
-                <li>
-                    <a href="#">FAQs</a>
-                </li>
-
-                <li>
-                    <a href="#">About Us</a>
-                </li>
 
             </ul>
             <ul class="nav-menu-right">
                 <li>
                     <a href="#">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-user"></i>
                     </a>
                 </li>
             </ul>
@@ -63,7 +53,23 @@
         </nav>
         <hr>
 
-      @RenderBody()
+        @RenderBody()
+
+        <section class="social">
+            <p>Siguenos Dolce Gusto</p>
+            <div class="links">
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </section>
+
 
     </div>
 
@@ -71,47 +77,47 @@
         <div class="footer-container">
             <ul>
                 <li>
-                    <h3>Shop and Enjoy</h3>
+                    <h3>Compra y disfruta</h3>
                 </li>
                 <li>
-                    <a href="#">Sweaters</a>
+                    <a href="#">Granos</a>
                 </li>
                 <li>
-                    <a href="#">Jeans</a>
+                    <a href="#">Cafeteras</a>
                 </li>
                 <li>
-                    <a href="#">Tops</a>
+                    <a href="#">Filtros</a>
                 </li>
                 <li>
-                    <a href="#">Bottoms</a>
+                    <a href="#">Escenciales</a>
                 </li>
                 <li>
-                    <a href="#">Accesories</a>
+                    <a href="#">Accesorios</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <h3>Ampersand AV Store</h3>
+                    <h3>Dolce Gusto tiendas</h3>
                 </li>
                 <li>
-                    <a href="#">Find a store</a>
+                    <a href="#">Encuentra una tienda</a>
                 </li>
                 <li>
-                    <a href="#">Shop online</a>
+                    <a href="#">Compra en linea</a>
                 </li>
                 <li>
-                    <a href="#">Order status</a>
+                    <a href="#">Estatus de orden</a>
                 </li>
                 <li>
                     <a href="#">Clearance</a>
                 </li>
                 <li>
-                    <a href="#">Shopping help</a>
+                    <a href="#">Ayuda con compras</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <h3>Ampersand AV Values</h3>
+                    <h3>Dolce Gusto valores</h3>
                 </li>
                 <li>
                     <a href="#">Inclusion and Diversity</a>
@@ -154,7 +160,7 @@
 
     <footer class="footer">
         <h3>
-            Ampersand AV ©
+            Dolce Gusto ©
         </h3>
     </footer>
 

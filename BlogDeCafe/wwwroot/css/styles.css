@@ -54,6 +54,7 @@ ul{
     padding: 20px 0px;
     margin-top: 20px;
 }
+
 hr{
     margin-top: 20px;
     margin-bottom: 40px;
@@ -64,8 +65,7 @@ hr{
 }
 
 /* Navegacion IZQ */
-
-.nav-main ul{
+.nav-main ul {
     display: flex;
 }
 
@@ -297,7 +297,9 @@ hr{
         grid-template-columns: repeat(2, 1fr);
         text-align: center;
     }
+    
 }
 
-@media (max-width: 500px){        
+@media (max-width: 500px){
+    
 }
