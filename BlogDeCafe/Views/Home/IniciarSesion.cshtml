@@ -1,0 +1,47 @@
+﻿@model BlogDeCafe.Models.Login
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ampersand AV</title>
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="icon" href="~/img/favicon.png">
+    <!--Fuentes-->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;900&family=Space+Mono&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="inicio-sesion-grid">
+        <div>
+            <div class="inicio-sesion-wall">
+            </div>
+            <div class="contenedor-form">
+                <h1>Inicio de sesion</h1>
+                <form method="post" action="~/Home/IniciarSesion">
+                    <label>Nombre de usuario:</label>
+                    
+                    <input type="text" asp-for="UserName"/>
+
+                    <label>Contraseña:</label>
+
+                    <input type="password" asp-for="Password"/>
+                    @Html.ValidationSummary()
+                    <input type="submit" value="Acceder"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ampersand AV</title>
+    <title>Dolce Gusto</title>
     <!--FontAwesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!--Custom CSS-->
@@ -34,7 +34,7 @@
                 @foreach (var item in CatService.GetAll().ToList())
                 {
                     <li>
-                        <a href="~/Home/@(item.Nombre)">@(item.Nombre)</a>
+                        <a href="~/Cat/@(item.Nombre.Replace(" ","-"))">@(item.Nombre)</a>
                     </li>
                 }
 
@@ -42,7 +42,7 @@
             </ul>
             <ul class="nav-menu-right">
                 <li>
-                    <a href="#">
+                    <a href="~/Home/IniciarSesion">
                         <i class="fas fa-user"></i>
                     </a>
                 </li>
