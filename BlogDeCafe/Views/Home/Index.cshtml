@@ -1,4 +1,5 @@
-﻿
+﻿@inject BlogDeCafe.Services.PublicacionesService PublicacionesService
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,79 +9,45 @@
 <header class="showcase">
     <h2>Dolce Gusto</h2>
     <p>Eres de los que antes de lavarse el rostro ya está encendiendo la cafetera para hacerse un café bien cargado? Eres de los que no puede ni cruzar una palabra antes de tomarse un buen café con leche?</p>
-    <a href="#" class="btn"><i class="fas fa-angle-double-left"></i> Sobre nosotros <i class="fas fa-angle-double-right"></i></a>
+    <a href="~/Home/Nosotros" class="btn"><i class="fas fa-angle-double-left"></i> Sobre nosotros <i class="fas fa-angle-double-right"></i></a>
 </header>
 
 <!--News Cards-->
 <div class="news-cards">
 
-    <div class="card">
-        <img src="~/img/blog_1.jpg" alt="imagen del blog 1">
-        <h3>Aesthetic outfits</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
-
-    <div class="card">
-        <img src="~/img/blog_2.jpg" alt="imagen del blog 2">
-        <h3>Clean and tidy</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
-
-    <div class="card">
-        <img src="~/img/blog_3.jpg" alt="imagen del blog 3">
-        <h3>Traveler tips</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
-    <div class="card">
-        <img src="~/img/blog_5.jpg" alt="imagen del blog 5">
-        <h3>Yass Autumn</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
+    @foreach (var item in PublicacionesService.GetCuatroMasRecientes().ToList())
+    {
+        <div class="card">
+            <img src="~/img/@(item.Id).jpg" alt="@(item.Titulo)">
+            <h3>@(item.Titulo)</h3>
+            <p>@(item.FechaPublicacion.ToShortDateString())</p>
+            <a href="~/Publicaciones/@(item.Titulo.Replace(" ","-"))">Ver post <i class="fas fa-angle-double-right"></i></a>
+        </div>
+    }
 
 </div>
 
 <section class="cards-banner-one">
     <div class="content">
-        <h2>Romina Malta’s “unresolved” practice</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus fuga eveniet culpa dolore itaque architecto quae esse adipisci non tenetur.</p>
-        <a href="#" class="btn"><i class="fas fa-angle-double-left"></i> Read more <i class="fas fa-angle-double-right"></i></a>
+        <h2>Ultimas publicaciones</h2>
+        <p>Explora entre todas las publicaciones, que nosotros, tus amigos cafeteros escribimos, ordenadas de mas a menos reciente. Sin culpas, nadie esta viendo...</p>
+        <a href="~/Publicaciones" class="btn"><i class="fas fa-angle-double-left"></i> Explorar <i class="fas fa-angle-double-right"></i></a>
     </div>
 </section>
 
 <!--News Cards-->
 <div class="news-cards">
 
-    <div class="card">
-        <img src="~/img/blog_6.jpg" alt="imagen del blog 6">
-        <h3>Black outfits</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
-
-    <div class="card">
-        <img src="~/img/blog_7.jpg" alt="imagen del blog 7">
-        <h3>Ways to dry faster</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
-
-    <div class="card">
-        <img src="~/img/blog_8.jpg" alt="imagen del blog 8">
-        <h3>Denim on denim on denim</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
-
-    <div class="card">
-        <img src="~/img/blog_10.jpg" alt="imagen del blog 10">
-        <h3>Vintage is the new modern</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolorum fugiat eaque commodi nam nisi.</p>
-        <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
-    </div>
+    @foreach (var item in PublicacionesService.GetCuatroMasComentadas().ToList())
+    {
+        <div class="card">
+            <img src="~/img/@(item.Id).jpg" alt="@(item.Titulo)">
+            <h3>@(item.Titulo)</h3>
+            <p>@(item.FechaPublicacion.ToShortDateString())</p>
+            <p>@(item.Comentarios.Count) Comentarios</p>
+            <a href="~/Publicaciones/@(item.Titulo.Replace(" ","-"))">Ver post <i class="fas fa-angle-double-right"></i></a>
+        </div>
+    }
 
 </div>
 
@@ -88,11 +55,9 @@
 
 <section class="cards-banner-3">
     <div class="content">
-        <h2>Lorem, ipsum dolor.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error sapiente in exercitationem expedita tempora ex! Nostrum praesentium minus voluptate inventore itaque eligendi quae assumenda harum, culpa accusamus commodi repellendus.</p>
-        <a href="#" class="btn"><i class="fas fa-angle-double-left"></i> Read more <i class="fas fa-angle-double-right"></i></a>
+        <h2>Suscribete a nuestro newsletter</h2>
+        <p>No te pierdas de nada y suscribete a nuestro newsletter, publicaciones diarias directo a tu telefono al alcance de un tap, vamos, nosotros te apoyamos ;) </p>
+        <a href="#" class="btn"><i class="fas fa-angle-double-left"></i> Suscribirme <i class="fas fa-angle-double-right"></i></a>
 
     </div>
 </section>
-
-

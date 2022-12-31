@@ -26,15 +26,33 @@ namespace BlogDeCafe.Controllers
         }
 
         [Route("/Cat/{id}")]
-        public IActionResult Categorias()
+        public IActionResult Categorias(int id)
         {
             return View();
         }
 
         [Route("/P/{id}")]
-        public IActionResult Publicacion(string id)
+        [Route("/Publicaciones/{id}")]
+        public IActionResult Publicacion(int id)
         {
             return View();
+        }
+
+        [Route("/about")]
+        [Route("/acercade")]
+        [Route("/Nosotros")]
+        public IActionResult Nosotros()
+        {
+            return View();
+        }
+
+
+        [Route("/Publicaciones")]
+        [Route("/P")]
+        public IActionResult VerTodo()
+        {
+            var publicaciones = context.Publicacions.OrderBy(x => x.FechaPublicacion);
+            return View(publicaciones);
         }
 
 
@@ -46,13 +64,8 @@ namespace BlogDeCafe.Controllers
 
 
 
-
-
-
-
-
-
-
+        [Route("/Admin")]
+        [Route("/IniciarSesion")]
         [HttpGet]
         public IActionResult IniciarSesion()
         {

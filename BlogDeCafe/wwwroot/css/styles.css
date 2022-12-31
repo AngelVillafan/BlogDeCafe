@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,35 +6,36 @@
     font-weight: 300;
 }
 
-body{
+body {
     color: black;
     background-color: #f6f6f6;
-    font-size: 16px;    
+    font-size: 16px;
 }
 
-h2{
+h2 {
     font-family: 'Playfair Display', serif;
 }
-h3{
+
+h3 {
     font: bold;
 }
 
-a{
+a {
     color: black;
     text-decoration: none;
     font-weight: 300;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.container{
+.container {
     width: 90%;
     margin: auto;
 }
 
-.menu-btn{
+.menu-btn {
     position: absolute;
     cursor: pointer;
     top: 32px;
@@ -42,6 +43,7 @@ ul{
     z-index: 2;
     font-size: 1.6rem;
 }
+
 input[type=submit] {
     background-color: #38220f;
     border: 0;
@@ -56,9 +58,9 @@ input[type=submit] {
     bottom: 0;
 }
 
-/* Navegation */
+/* Navigation */
 
-.nav-main{
+.nav-main {
     font-size: 18px;
     display: flex;
     justify-content: space-between;
@@ -68,12 +70,12 @@ input[type=submit] {
     margin-top: 20px;
 }
 
-hr{
+hr {
     margin-top: 20px;
     margin-bottom: 40px;
 }
 
-.nav-brand{
+.nav-brand {
     width: 70px;
 }
 
@@ -82,22 +84,22 @@ hr{
     display: flex;
 }
 
-.nav-main ul li{
-    padding: 10px;   
-}
+    .nav-main ul li {
+        padding: 10px;
+    }
 
-.nav-main ul li a{
-    padding:  3px;
-}
+        .nav-main ul li a {
+            padding: 3px;
+        }
 
-.nav-main ul li a:hover{
-    border-bottom: 2px solid black;
-}
+            .nav-main ul li a:hover {
+                border-bottom: 2px solid black;
+            }
 
-.nav-main ul.nav-menu{
-    flex: 1;
-    margin-left: 20px;
-}
+    .nav-main ul.nav-menu {
+        flex: 1;
+        margin-left: 20px;
+    }
 
 /* Showcase */
 
@@ -113,8 +115,11 @@ hr{
     justify-content: flex-end;
     margin-bottom: 40px;
 }
+.publicaciones {
+    background: url(/img/banner_4.jpg) no-repeat center;
+}
 
-.btn{
+.btn {
     cursor: pointer;
     display: inline-block;
     border: 0;
@@ -125,56 +130,57 @@ hr{
     border: 1px solid gray;
     margin: 10px 0px;
     border-radius: 4px;
-} 
-
-.btn:hover{
-    opacity: .7;
 }
 
-.showcase h2, .showcase p{
+    .btn:hover {
+        opacity: .7;
+    }
+
+.showcase h2, .showcase p {
     text-align: center;
     width: 90%;
     background-color: white;
     padding: 0 0 5px 5px;
 }
 
-.showcase h2{
+.showcase h2 {
     font-family: 'Playfair Display', serif;
     font-size: 50px;
 }
 
 /* News Cards */
 
-.news-cards{
+.news-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 25px;
     margin: 40px 0px;
 }
 
-.news-cards img{
-    width: 100%;
-    height: auto;
-}
+    .news-cards img {
+        width: 100%;
+        height: auto;
+    }
 
-.news-cards h3{
-    font-size: 20px;
-    margin: 10px 0;
-}
+    .news-cards h3 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
 
-.news-cards a{
-    padding: 10px 0;
-    color: black;
-    text-transform: uppercase;
-    display: inline-block;
-}
-.news-cards a:hover{
-    text-decoration: underline;
-}
+    .news-cards a {
+        padding: 10px 0;
+        color: black;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+
+        .news-cards a:hover {
+            text-decoration: underline;
+        }
 
 /* Cards Banner One */
 
-.cards-banner-one{
+.cards-banner-one {
     width: 100%;
     height: 350px;
     background-image: url(/img/banner_2.jpg);
@@ -182,66 +188,77 @@ hr{
     background-position: center;
     background-size: cover;
 }
-.cards-banner-one h2, .cards-banner-one p{
-    background-color: white;
-    padding: 0 0 5px 5px;
-}
 
-.cards-banner-one .content{
-    width: 40%;
-    padding: 150px 0 0 30px;
-}
+    .cards-banner-one h2, .cards-banner-one p {
+        background-color: white;
+        padding: 0 0 5px 5px;
+    }
+
+
+
+    .cards-banner-one .content {
+        width: 50%;
+        padding: 150px 0 0 30px;
+    }
 
 /* Cards Banner 3 */
 
-.cards-banner-3{
-    background: url(/img/banner-3.jpg) no-repeat center center;
+.cards-banner-3 {
+    background: url(/img/banner_3.jpg) no-repeat center center;
     background-size: cover;
     height: 350px;
     width: 100%;
 }
 
-.cards-banner-3 .content{
-    color: white;
-    width: 50%;
-    padding: 100px 0 0 30px;
-}
+    .cards-banner-3 .content {
+        color: white;
+        text-shadow: 0px 0px 5px black;
+        width: 50%;
+        padding: 100px 0 0 30px;
+    }
+
+/*.textoPost {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}*/
 
 /* Social */
 
-.social{
+.social {
     margin: 50px;
 }
 
-.social p{
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 40px;
-}
+    .social p {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
 
-.links{
+.links {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.links a{
-    margin: 0 30px;
-}
+    .links a {
+        margin: 0 30px;
+    }
 
-.links a i{
-    font-size: 3rem;
-}
+        .links a i {
+            font-size: 3rem;
+        }
 
 /* Footer Links */
 
-.footer-links{
+.footer-links {
     background: #aaaaaa;
     font-size: 12px;
     padding: 35px 0;
 }
 
-.footer-container{
+.footer-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -249,23 +266,23 @@ hr{
     justify-content: center;
 }
 
-.footer-container ul{
-    margin: 0 auto;
-}
+    .footer-container ul {
+        margin: 0 auto;
+    }
 
-.footer-container ul li{
-    line-height: 3;
-}
+        .footer-container ul li {
+            line-height: 3;
+        }
 
-.footer-container a{
-    font-weight: 300;
-}
+    .footer-container a {
+        font-weight: 300;
+    }
 
-.footer-container h3{
-    font-weight: 900;
-}
+    .footer-container h3 {
+        font-weight: 900;
+    }
 
-.footer{
+.footer {
     background: #aaaaaa;
     color: #f6f6f6;
     font-size: 20px;
@@ -280,14 +297,14 @@ hr{
 
 /*INICIO SESION*/
 
-.inicio-sesion-grid{
+.inicio-sesion-grid {
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
+
     .inicio-sesion-grid > div {
         height: 70%;
         width: 70%;
@@ -295,31 +312,34 @@ hr{
         display: grid;
         grid-template-columns: 50% 50%;
     }
+
 .inicio-sesion-wall {
-    width:100%;
+    width: 100%;
     height: 100%;
     background-image: url(/img/wall.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.contenedor-form{
+.contenedor-form {
     display: flex;
     flex-direction: column;
-    padding:10px;
+    padding: 10px;
 }
 
-.contenedor-form h1{
-    font-weight: 900;
-}
-.contenedor-form form{
-    display: flex;
-    flex-direction:column;
-    gap:10px;
-    height:100%;
-}
-.contenedor-form form input[type=submit]{
-}
+    .contenedor-form h1 {
+        font-weight: 900;
+    }
+
+    .contenedor-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+    }
+
+        .contenedor-form form input[type=submit] {
+        }
 
 
 /*END INICIO SESION*/
@@ -336,8 +356,8 @@ hr{
 
 
 
-    @media (max-width: 700px) {
-        .nav-main ul.nav-menu{
+@media (max-width: 700px) {
+    .nav-main ul.nav-menu {
         display: block;
         position: absolute;
         top: 0;
@@ -349,32 +369,33 @@ hr{
         transform: translateX(-400px);
         transition: transform .5s ease-in-out;
     }
-    .nav-main ul.nav-menu.show{
-        transform: translateX(-20px);
-    }
 
-    .nav-main ul.nav-menu li{
-        padding: 20px;
-        font-size: 14px;
-    }
+        .nav-main ul.nav-menu.show {
+            transform: translateX(-20px);
+        }
 
-    .nav-main ul.nav-menu-right{
+        .nav-main ul.nav-menu li {
+            padding: 20px;
+            font-size: 14px;
+        }
+
+    .nav-main ul.nav-menu-right {
         margin-right: 50px;
     }
 
-    .news-cards{
+    .news-cards {
         grid-template-columns: repeat(2, 1fr);
     }
-    .cards-banner-one .content, .cards-banner-3 .content{
+
+    .cards-banner-one .content, .cards-banner-3 .content {
         width: 80%;
     }
-    .footer-links .footer-container{
+
+    .footer-links .footer-container {
         grid-template-columns: repeat(2, 1fr);
         text-align: center;
     }
-    
 }
 
-@media (max-width: 500px){
-    
+@media (max-width: 500px) {
 }

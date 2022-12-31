@@ -1,0 +1,25 @@
+﻿@inject BlogDeCafe.Services.PublicacionesService PublicacionesService
+
+@{
+    ViewData["Title"] = "VerTodo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header class="showcase publicaciones">
+    <h2>Todas las publicaciones</h2>
+    <p>¿Buscas leer mas? Adelante, aquí estan todas nuestras publicaciones, de la mas nueva a la mas antigua.</p>
+</header>
+
+<div class="news-cards">
+
+    @foreach (var item in PublicacionesService.GetAll().ToList())
+    {
+            <div class="card">
+                <img src="~/img/@(item.Id).jpg" alt="@(item.Titulo)">
+                <h3>@(item.Titulo)</h3>
+                <p>@(item.FechaPublicacion.ToShortDateString())</p>
+                <a href="~/Publicaciones/@(item.Titulo.Replace(" ","-"))">Ver post <i class="fas fa-angle-double-right"></i></a>
+            </div>
+    }
+
+</div>
