@@ -26,9 +26,11 @@ namespace BlogDeCafe.Controllers
         }
 
         [Route("/Cat/{id}")]
-        public IActionResult Categorias(int id)
+        public IActionResult Categorias(string id)
         {
-            return View();
+            var c = id.Replace("-", " ");
+            var cat = context.Categoria.Select(x => x).Where(x => x.Nombre == c);
+            return View(cat);
         }
 
         [Route("/P/{id}")]

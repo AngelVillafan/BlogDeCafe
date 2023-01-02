@@ -80,6 +80,57 @@ hr {
 }
 
 /* Navegacion IZQ */
+
+/*Region Modal*/
+.modal {
+    backdrop-filter: blur(7px);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding-top:20px;
+    margin-top:-20px;
+    align-items: center;
+    justify-content: center;
+    visibility: collapse;
+}
+.modal-newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #a0a0a0;
+    padding:30px;
+    width: 500px;
+    height:250px;
+}
+.modal-newsletter form{
+    display:flex;
+    gap:10px;
+    justify-content: space-between;
+}
+.modal-newsletter form input[type=email]{
+    width:100%;
+    border-radius: 4px;
+    border-width:0;
+    padding-inline-start: 8px;
+}
+.modal-newsletter i{
+    position: absolute;
+    align-self:flex-end;
+    font-size:25px;
+    cursor:pointer;
+}
+.active{
+    visibility: visible;
+}
+
+
+/*Endregion Modal*/
+
+
+
+
 .nav-main ul {
     display: flex;
 }

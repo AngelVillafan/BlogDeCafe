@@ -18,6 +18,22 @@
 </head>
 <body>
 
+    <div class="modal" id="popup">
+        <div class="modal-newsletter">
+            <i class="fas fa-times" onclick="popupToggle();"></i>
+
+            <h2>
+                Suscríbase a nuestro boletín
+            </h2>
+            <p>Seras notificado cada que se publique un nuevo post, para que no te pierdas de nada.</p>
+            <form>
+                <input type="email" placeholder="Email" />
+                <input type="submit" value="Suscribirme!" />
+            </form>
+        </div>
+
+    </div>
+
     <div class="menu-btn">
         <i class="fas fa-bars"></i>
     </div>
@@ -160,6 +176,12 @@
     </footer>
 
     <script src="~/js/script.js"></script>
+    <script>
+        function popupToggle(){
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>

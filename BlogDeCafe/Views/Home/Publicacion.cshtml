@@ -1,8 +1,34 @@
-﻿
+﻿@model BlogDeCafe.Models.Publicacion
 @{
     ViewData["Title"] = "Publicacion";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Publicacion</h1>
+
+<header class="showcase" style="background: url(~/img/publicaciones/(@Model.Id).jpg) no-repeat center; box-shadow: 0px 0px 40px 30px rgb(@(Model.Publicacioncol));">
+    <h2>@Model.Titulo</h2>
+    <a href="~/Home/Nosotros" class="btn"><i class="fas fa-angle-double-left"></i> Sobre nosotros <i class="fas fa-angle-double-right"></i></a>
+</header>
+
+<div class="img-publicacion">
+    <img style="box-shadow: 0px 0px 40px 30px rgb(@(Model.Publicacioncol));" />
+</div>
+
+
+<div class="centrado">
+
+    <hr />
+
+    @Html.Raw(Model.Contenido)
+
+    <hr />
+
+    <div>
+        <h3>Escrito por: @Model.Autor</h3>
+        <h6>Publicado el: @Model.FechaPublicacion.ToShortDateString()</h6>
+    </div>
+
+    <hr />
+
+</div>
 
