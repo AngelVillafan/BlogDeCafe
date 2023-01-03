@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol.Plugins;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+using BlogDeCafe.Models.ViewModels;
 
 namespace BlogDeCafe.Controllers
 {
@@ -28,16 +30,39 @@ namespace BlogDeCafe.Controllers
         [Route("/Cat/{id}")]
         public IActionResult Categorias(string id)
         {
-            var c = id.Replace("-", " ");
-            var cat = context.Categoria.Select(x => x).Where(x => x.Nombre == c);
-            return View(cat);
+            id = id.Replace("-", " ");
+            var datos = context.Categoria.Include(x => x.Publicacions).Where(x => x.Nombre == id).Select(x => new CategoriaViewModel
+            {
+                NombreCategoria = x.Nombre,
+                Id = x.Id,
+                Publicacion = x.Publicacions.Select(x => new Publicacion
+                {
+                    Id = x.Id,
+                    Titulo = x.Titulo,
+                    FechaPublicacion = x.FechaPublicacion
+                })
+            }).FirstOrDefault();
+            return View(datos);
         }
 
         [Route("/P/{id}")]
         [Route("/Publicaciones/{id}")]
-        public IActionResult Publicacion(int id)
+        public IActionResult Publicacion(string? id)
         {
-            return View();
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            id = id.Replace("-", " ");
+            var publicacion = context.Publicacions.Include(x => x.Comentarios).FirstOrDefault(x=>x.Titulo == id);
+            if (publicacion == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View(publicacion);
+            }
         }
 
         [Route("/about")]

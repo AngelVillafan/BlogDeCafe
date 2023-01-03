@@ -18,7 +18,7 @@
     @foreach (var item in PublicacionesService.GetCuatroMasRecientes().ToList())
     {
         <div class="card">
-            <img src="~/img/@(item.Id).jpg" alt="@(item.Titulo)">
+            <img src="~/img/publicaciones/@(item.Id).jpg" alt="@(item.Titulo)">
             <h3>@(item.Titulo)</h3>
             <p>@(item.FechaPublicacion.ToShortDateString())</p>
             <a href="~/Publicaciones/@(item.Titulo.Replace(" ","-"))">Ver post <i class="fas fa-angle-double-right"></i></a>
@@ -41,10 +41,10 @@
     @foreach (var item in PublicacionesService.GetCuatroMasComentadas().ToList())
     {
         <div class="card">
-            <img src="~/img/@(item.Id).jpg" alt="@(item.Titulo)">
+            <img src="~/img/publicaciones/@(item.Id).jpg" alt="@(item.Titulo)">
             <h3>@(item.Titulo)</h3>
             <p>@(item.FechaPublicacion.ToShortDateString())</p>
-            <p>@(item.Comentarios.Count) Comentarios</p>
+            <p>@(item.TotalComentarios) Comentarios</p>
             <a href="~/Publicaciones/@(item.Titulo.Replace(" ","-"))">Ver post <i class="fas fa-angle-double-right"></i></a>
         </div>
     }

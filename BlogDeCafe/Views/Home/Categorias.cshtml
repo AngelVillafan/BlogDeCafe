@@ -1,8 +1,30 @@
-﻿@model BlogDeCafe.Models.Categorium
+﻿@model BlogDeCafe.Models.ViewModels.CategoriaViewModel
 @{
     ViewData["Title"] = "Categorias";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Categoria @Model.Nombre</h1>
 
+<div class="publicacion");">
+    <img src="~/img/cat@(Model.Id).jpg" />
+    <h2>@(Model.NombreCategoria)</h2>
+</div>
+<div class="publicaciones">
+    @if (Model.Publicacion != null)
+    {
+        @foreach (var p in Model.Publicacion)
+    {
+            <div class="publicacion-card">
+                <img resource="~/img/publicaciones/@(p.Id)" />
+                <div>
+                    <h3>@(p.Titulo)</h3>
+                    <p>Publicado el: @(p.FechaPublicacion)</p>
+                    <p>@(p.Comentarios.Count) Comentarios</p>
+
+                </div>
+            </div>
+        }
+  
+    }
+    
+</div>

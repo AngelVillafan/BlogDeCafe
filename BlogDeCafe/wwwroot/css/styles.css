@@ -5,7 +5,9 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
-
+html{
+    
+}
 body {
     color: black;
     background-color: #f6f6f6;
@@ -109,12 +111,12 @@ hr {
     gap:10px;
     justify-content: space-between;
 }
-.modal-newsletter form input[type=email]{
-    width:100%;
-    border-radius: 4px;
-    border-width:0;
-    padding-inline-start: 8px;
-}
+    .modal-newsletter form input[type=email], .comentarionuevo form input[type=text] {
+        width: 100%;
+        border-radius: 4px;
+        border-width: 0;
+        padding-inline-start: 8px;
+    }
 .modal-newsletter i{
     position: absolute;
     align-self:flex-end;
@@ -166,28 +168,110 @@ hr {
     justify-content: flex-end;
     margin-bottom: 40px;
 }
+
+.publicacion {
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+.publicacion img{
+    width: 100%;
+    height:100%;
+    position:center;
+    object-fit:cover
+}
+    .publicacion h2 {
+        position: absolute;
+        margin-bottom: 50px;
+        font-family: 'Playfair Display', serif;
+        font-size: 40px;
+        background-color: white;
+        width: 80%;
+        text-align: center;
+    }
+
 .publicaciones {
     background: url(/img/banner_4.jpg) no-repeat center;
 }
-
-.btn {
-    cursor: pointer;
-    display: inline-block;
-    border: 0;
-    font-weight: bold;
-    padding: 9px 20px;
-    background: white;
-    font-size: 15px;
-    border: 1px solid gray;
-    margin: 10px 0px;
-    border-radius: 4px;
+.autor{
+    margin-bottom:20px;
 }
+.comentarionuevo {
+    background-color: #A4AE93;
+    height: 300px;
+    margin-top: 10px;
+}
+.comentarionuevo form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    padding:20px;
+    height:100%;
+}
+    .comentarionuevo form textarea {
+        width: 100%;
+        height: 100%;
+        resize: none;
+        padding-inline-start: 8px;
+        border-radius: 4px;
+        border-width: 0;
+    }
+    .comentarionuevo form input[type=submit]{
+        align-self:flex-end;
+    }
+
+    .comentarionuevo form p {
+        position: absolute;
+        margin-top: 228px;
+        font-weight: 500;
+        color: #38220f;
+    }
+
+
+.comentario{
+    padding:10px;
+    border-radius:4px;
+    background-color:#a1a1a1;
+    margin:20px 0;
+}
+.comentario label{
+    font-weight:400;
+}
+.comentario p{
+    font-size: 14px;
+}
+.comentarioheader{
+    display: flex;
+    gap:20px;
+    align-items:center;
+}
+.comentario .comentarioheader span{
+    font-size:12px;
+}
+
+    .btn {
+        cursor: pointer;
+        display: inline-block;
+        border: 0;
+        font-weight: bold;
+        padding: 9px 20px;
+        background: white;
+        font-size: 15px;
+        border: 1px solid gray;
+        margin: 10px 0px;
+        border-radius: 4px;
+    }
 
     .btn:hover {
         opacity: .7;
     }
 
-.showcase h2, .showcase p {
+.showcase h2, .showcase p{
     text-align: center;
     width: 90%;
     background-color: white;

@@ -5,13 +5,13 @@
 }
 
 
-<header class="showcase" style="background: url(~/img/publicaciones/(@Model.Id).jpg) no-repeat center; box-shadow: 0px 0px 40px 30px rgb(@(Model.Publicacioncol));">
+@*<header class="publicacion" style="background: url(~/img/publicaciones/(@Model.Id).jpg) no-repeat center; box-shadow: 0px 0px 40px 30px rgb(@(Model.Publicacioncol));">
     <h2>@Model.Titulo</h2>
-    <a href="~/Home/Nosotros" class="btn"><i class="fas fa-angle-double-left"></i> Sobre nosotros <i class="fas fa-angle-double-right"></i></a>
-</header>
+</header>*@
 
-<div class="img-publicacion">
-    <img style="box-shadow: 0px 0px 40px 30px rgb(@(Model.Publicacioncol));" />
+<div class="publicacion" style="background: url(~/img/publicaciones/(@Model.Id).jpg) no-repeat center; box-shadow: 0px 0px 45px 15px rgb(@(Model.Publicacioncol));">
+    <img src="~/img/publicaciones/@(Model.Id).jpg"/>
+    <h2>@(Model.Titulo)</h2>
 </div>
 
 
@@ -21,14 +21,54 @@
 
     @Html.Raw(Model.Contenido)
 
-    <hr />
+    <hr class="autor" />
 
     <div>
         <h3>Escrito por: @Model.Autor</h3>
-        <h6>Publicado el: @Model.FechaPublicacion.ToShortDateString()</h6>
+        <h5>Publicado el: @Model.FechaPublicacion.ToShortDateString()</h5>
     </div>
 
     <hr />
 
-</div>
+    <div>
+        <h2>
+          Comentarios
+        </h2>
+        <div class="comentarionuevo">
+            <form>
+                <label>Dejanos un comentario!</label>
+                <input type="text" required placeholder="Escribe tu nombre"/>
+                <textarea required wrap="soft" placeholder="Aquí va tu comentario"></textarea>
+                <p>Recuerda ser respetuoso y seguir las normas comunitarias! :)</p>
+                <input type="submit" value="Enviar"/>
+            </form>
+        </div>
+        <div class="comentarios">
+            <div class="comentario">
+                <div class="comentarioheader">
+                    <label>Nombre</label>
+                    <span>12/Dic/2023</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
 
+            <div class="comentario">
+                <div class="comentarioheader">
+                    <label>Nombre</label>
+                    <span>12/Dic/2023</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <div class="comentario">
+                <div class="comentarioheader">
+                    <label>Nombre</label>
+                    <span>12/Dic/2023</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
